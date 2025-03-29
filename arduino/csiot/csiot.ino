@@ -188,9 +188,10 @@ void callback(char* topic, byte* payload, unsigned int length) {
       case COLOR: {
         UPDATINGOP = true;
         uint32_t color = hexToColor(json["data"].as<String>());
-        COLORS = new uint32_t[1];
+        COLORS = new uint32_t[2];
         COLORS[0] = color;
-        colorCount = 1;
+        COLORS[1] = 0;
+        colorCount = 2;
         UPDATINGOP = false;
         break;
       }
